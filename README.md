@@ -27,20 +27,31 @@
 
 界面设计
 -------
-* 注册界面
-* 登陆界面
-* 使用界面
+* 注册界面   
+![img](http://47.100.166.1/workspace/web/img/login.png "img")  
+* 登陆界面  
+![img](http://47.100.166.1/workspace/web/img/regis.png "img")  
+* 初始界面  
+![img](http://47.100.166.1/workspace/web/img/select_form.png "img")  
+* 使用界面  
+![img](http://47.100.166.1/workspace/web/img/making.png "img")  
 
 数据结构
 -------
 * 用户信息  
-![baidu](http://47.100.166.1/workspace/web/img/user_infor.png "百度logo")
+![img](http://47.100.166.1/workspace/web/img/user_infor.png "img")
 * 模板信息    
-![baidu](http://47.100.166.1/workspace/web/img/form_infor.png "百度logo")
+![img](http://47.100.166.1/workspace/web/img/form_infor.png "img")
 
 功能模块
 -------
 * 模板选择
 * 简历生成
 * 建议提示
+
+   
+      
+         
+
+(注释：后期结果应会有所变动）
 
