@@ -1,0 +1,99 @@
+@charset "UTF-8";
+.ctn{
+	height:100%;
+	width:100%;
+	display:flex;
+	flex-direction:column;
+}
+.head{
+	height:150px;
+	width:100%;
+	background-color:rgb(108,200,255);
+	display:flex;
+	flex-direction:row;
+}
+.navigation{
+     height:120px;	 
+     padding: 2.8em;
+     border: 1px solid #eee;
+     display: block;
+     width:100%;
+     margin: 0 auto;
+     text-align: center;
+     display:flex;
+     flex-direction:row;
+     justify-content:space-around;
+
+}
+.navigation a:hover{
+	border-radius:4px;
+	color:red;
+	background:white;
+}
+.register,.log-in,.about-us,.contect-us{	
+	text-decoration:none;
+	font-size:30px;
+	color:orange;
+}
+.body1{
+	height:500px;
+	width:100%;
+	display:flex;
+	flex-direction:row;
+}
+.picture1{
+	height:100%;
+	width:50%;
+	background:url(logo.jpg);
+	background-repeat:no-repeat;
+    background-size:100% auto;
+}
+
+.picture2{
+	height:100%;
+	width:50%;
+	background:url(picture5.png);
+	background-repeat:no-repeat;
+    background-size:100% auto;
+}
+.body2{
+	margin-top:-10px;
+	height:500px;
+	width:100%;
+	background:rgb(230,230,230);
+	display:flex;
+	flex-direction:row;
+}
+.body2-img1,.body2-img2,.body2-img3{
+	height:300px;
+	width:280px;
+	align-self:center;
+
+}
+.pictures{
+	height:100%;
+	width:100%;
+}
+
+.body2-img1{
+    margin-left:200px;
+}
+.body2-img2,.body2-img3{
+    margin-left:120px;
+}
+.foot{
+	height:150px;
+	width:100%;
+	background:rgb(102,102,102);
+}
+
+
+
+
+
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-06-18 11:25:12
+ * @version $Id$
+ */
