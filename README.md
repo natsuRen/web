@@ -31,15 +31,20 @@
 ![img](http://47.100.166.1/workspace/web/img/sign_up.png "img")  
 * 登陆界面  
 ![img](http://47.100.166.1/workspace/web/img/log_in.png "img")  
-* 初始界面  
+* 初始界面 
+
 ![img](http://47.100.166.1/workspace/web/img/home1.jpg "img") 
 ![img](http://47.100.166.1/workspace/web/img/home.png "img")  
-* 选择界面  
+* 选择界面 
+
 ![img](http://47.100.166.1/workspace/web/img/select.png "img")  
-* 制作界面  
+* 制作界面 
+
 ![img](http://47.100.166.1/workspace/web/img/making.png "img")  
 * 简历效果  
-![img](http://47.100.166.1/workspace/web/img/resume1.png "img")  
+
+![img](http://47.100.166.1/workspace/web/img/resume1.png "img")
+
 ![img](http://47.100.166.1/workspace/web/img/resume.png "img")  
 
 
@@ -47,7 +52,9 @@
 数据结构
 -------
 * 相关数据 
-![img](http://47.100.166.1/workspace/web/img/mysql1.png "img")  
+
+![img](http://47.100.166.1/workspace/web/img/mysql1.png "img")
+
 ![img](http://47.100.166.1/workspace/web/img/mysql.png "img")  
 
 
