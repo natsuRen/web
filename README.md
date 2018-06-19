@@ -40,7 +40,7 @@
 ![img](http://47.100.166.1/workspace/web/img/select.png "img")  
 * 制作界面 
 
-![img](http://47.100.166.1/workspace/web/img/making.png "img")  
+![img](http://47.100.166.1/workspace/web/img/making1.png "img")  
 * 简历效果  
 
 ![img](http://47.100.166.1/workspace/web/img/resume1.png "img")
