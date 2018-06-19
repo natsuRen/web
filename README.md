@@ -45,7 +45,7 @@
 
 ![img](http://47.100.166.1/workspace/web/img/resume1.png "img")
 
-![img](http://47.100.166.1/workspace/web/img/resume.png "img")  
+![img](http://47.100.166.1/workspace/web/img/resume.jpg "img")  
 
 
 
