@@ -28,26 +28,35 @@
 界面设计
 -------
 * 注册界面   
-![img](http://47.100.166.1/workspace/web/img/login.png "img")  
+![img](http://47.100.166.1/workspace/web/img/sign_up.png "img")  
 * 登陆界面  
-![img](http://47.100.166.1/workspace/web/img/regis.png "img")  
+![img](http://47.100.166.1/workspace/web/img/log_in.png "img")  
 * 初始界面  
-![img](http://47.100.166.1/workspace/web/img/select_form.png "img")  
-* 使用界面  
+![img](http://47.100.166.1/workspace/web/img/home1.jpg "img") 
+![img](http://47.100.166.1/workspace/web/img/home.png "img")  
+* 选择界面  
+![img](http://47.100.166.1/workspace/web/img/select.png "img")  
+* 制作界面  
 ![img](http://47.100.166.1/workspace/web/img/making.png "img")  
+* 简历效果  
+![img](http://47.100.166.1/workspace/web/img/resume1.png "img")  
+![img](http://47.100.166.1/workspace/web/img/resume.png "img")  
+
+
 
 数据结构
 -------
-* 用户信息  
-![img](http://47.100.166.1/workspace/web/img/user_infor.png "img")
-* 模板信息    
-![img](http://47.100.166.1/workspace/web/img/form_infor.png "img")
+* 相关数据 
+![img](http://47.100.166.1/workspace/web/img/mysql1.png "img")  
+![img](http://47.100.166.1/workspace/web/img/mysql.png "img")  
+
 
 功能模块
 -------
 * 注册登录：用户填写相关信息进项登录/注册。
 * 模板选择：模板以图片的形式展示于页面并在每张图片上添加事件响应，当用户选择点击所需的模板即可进入该模板页面。
 * 简历生成：根据用户填写信息内容，生成相应简历。
+* 安全保障：对用户密码进行加密处理。
 
 
    
