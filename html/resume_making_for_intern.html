@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+ <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<title>Resume-for-intern</title><!-- 实习生求职简历 -->
+<style>
+      #myinput::-webkit-input-placeholder {color: white;}
+      #myinput:-moz-placeholder {color: white;}
+      #myinput:-ms-input-placeholder {color: white;}
+      <select name="" id="">text-align:center;text-align-last:center;/*兼容chrome*/</select>
+    </style>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="../css/resume_making.css" rel="stylesheet">
+</head>
+
+<body>
+    <canvas class="fireworks"></canvas>
+
+    <button  id="log-out" class="btn btn-success log-out" onclick="window.open('../php/index1.php')"><i class="fas fa-user fa"></i> 退出</button>
+    <button  id="downloadPdf" class="btn btn-success export"><i class="fas fa-download fa"></i> 导出</button>
+    <button  id="import-img" class="btn btn-success import-img"><i class="fal fa-image fa"></i> 添加</button>
+    <!-- <div>
+        <i class="fas fa-sign-out-alt fa"></i>
+        <input type="button" id="log-out" class="btn btn-success log-out" value="log out">
+    </div>
+    <div>
+        <input type="button" id="downloadPdf" class="btn btn-success export" value="简历导出">
+    </div>
+    <div>
+        <input type="button" id="import-img" class="btn btn-success import-img" value="添加照片">
+    </div> -->
+    
+    
+    
+    <div class="back">
+        <img src="../img/logo/logo2.png" class="backimg" alt="">
+    </div>
+   
+    
+
+    <input id="info" class="info" placeholder = " 输入内容......">
+
+
+
+   <!--  <div id="edui11" class="edui-box edui-button edui-for-undo edui-default">
+        <div id="edui11_state" onmousedown='$EDITORUI["edui11"].Stateful_onMouseDown(event, this);' onmouseup='$EDITORUI["edui11"].Stateful_onMouseUp(event, this);' onmouseover='$EDITORUI["edui11"].Stateful_onMouseOver(event, this);' onmouseout='$EDITORUI["edui11"].Stateful_onMouseOut(event, this);'>
+            <div class="edui-button-wrap edui-default">
+                <div id="edui11_body" unselectable="on" title="撤销" class="edui-button-body edui-default" onmousedown='return $EDITORUI["edui11"]._onMouseDown(event, this);' onclick='return $EDITORUI["edui11"]._onClick(event, this);'>
+                    <div class="edui-box edui-icon edui-default" style="background-image: url(img/img2.png);width: 20px;height: 20px;"></div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+
+
+
+    <button onclick = "sumAppend()" type="button" class="btn-oper btn-append-sum btn-success">添加内容</button>
+    <button onclick = "removeSumFir()" type="button" class="btn-oper btn-deleteSumFir btn-success">向后删除</button>
+    <button onclick = "removeSumEnd()" type="button" class="btn-oper btn-deleteSumEnd btn-success">向前删除</button>
+
+    <button onclick = "eduAppend()" type="button" class="btn-oper btn-append-edu btn-success">添加内容</button>
+    <button onclick = "removeEduFir()" type="button" class="btn-oper btn-deleteEduFir btn-success">向后删除</button>
+    <button onclick = "removeEduEnd()" type="button" class="btn-oper btn-deleteEduEnd btn-success">向前删除</button>
+
+    <button onclick = "tecAppend()" type="button" class="btn-oper btn-append-tec btn-success">添加内容</button>
+    <button onclick = "removeTecFir()" type="button" class="btn-oper btn-deleteTecFir btn-success">向后删除</button>
+    <button onclick = "removeTecEnd()" type="button" class="btn-oper btn-deleteTecEnd btn-success">向前删除</button>
+
+    <button onclick = "honAppend()" type="button" class="btn-oper btn-append-hon btn-success">添加内容</button>
+    <button onclick = "removeHonFir()" type="button" class="btn-oper btn-deleteHonFir btn-success">向后删除</button>
+    <button onclick = "removeHonEnd()" type="button" class="btn-oper btn-deleteHonEnd btn-success">向前删除</button>
+    
+
+    <!-- <button onclick = "proModAppend()" type="button" class="btn-oper btn-append-pro-mod btn-success">添加该模块</button> -->
+    <button onclick = "proModDelete1()" type="button" class="btn-oper btn-delete-pro-mod1 btn-success">删除模块1</button>
+    <button onclick = "proMod1Append()" type="button" class="btn-oper btn-append-pro-mod1 btn-success">添加内容</button>
+    <button onclick = "removeProMod1Fir()" type="button" class="btn-oper btn-deleteProMod1Fir btn-success">向后删除</button>
+    <button onclick = "removeProMod1End()" type="button" class="btn-oper btn-deleteProMod1End btn-success">向前删除</button>
+
+    <button onclick = "proModDelete2()" type="button" class="btn-oper btn-delete-pro-mod2 btn-success">删除模块2</button>
+    <button onclick = "proMod2Append()" type="button" class="btn-oper btn-append-pro-mod2 btn-success">添加内容</button>
+    <button onclick = "removeProMod2Fir()" type="button" class="btn-oper btn-deleteProMod2Fir btn-success">向后删除</button>
+    <button onclick = "removeProMod2End()" type="button" class="btn-oper btn-deleteProMod2End btn-success">向前删除</button>
+
+
+    <button onclick = "proAppend()" type="button" class="btn-oper btn-append-pro btn-success">添加内容</button>
+    <button onclick = "removeProFir()" type="button" class="btn-oper btn-deleteProFir btn-success">向后删除</button>
+    <button onclick = "removeProEnd()" type="button" class="btn-oper btn-deleteProEnd btn-success">向前删除</button>
+
+
+    <button onclick = "clubAppend()" type="button" class="btn-oper btn-append-club btn-success">添加内容</button>
+    <button onclick = "removeClubFir()" type="button" class="btn-oper btn-deleteClubFir btn-success">向后删除</button>
+    <button onclick = "removeClubEnd()" type="button" class="btn-oper btn-deleteClubEnd btn-success">向前删除</button>
+
+
+
+    <button onclick = "clubModDelete1()" type="button" class="btn-oper btn-delete-club-mod1 btn-success">删除模块1</button>
+    <button onclick = "clubMod1Append()" type="button" class="btn-oper btn-append-club-mod1 btn-success">添加内容</button>
+    <button onclick = "removeClubMod1Fir()" type="button" class="btn-oper btn-deleteClubMod1Fir btn-success">向后删除</button>
+    <button onclick = "removeClubMod1End()" type="button" class="btn-oper btn-deleteClubMod1End btn-success">向前删除</button>
+
+    <button onclick = "clubModDelete2()" type="button" class="btn-oper btn-delete-club-mod2 btn-success">删除模块2</button>
+    <button onclick = "clubMod2Append()" type="button" class="btn-oper btn-append-club-mod2 btn-success">添加内容</button>
+    <button onclick = "removeClubMod2Fir()" type="button" class="btn-oper btn-deleteClubMod2Fir btn-success">向后删除</button>
+    <button onclick = "removeClubMod2End()" type="button" class="btn-oper btn-deleteClubMod2End btn-success">向前删除</button>
+
+
+    <button onclick = "elseAppend()" type="button" class="btn-oper btn-append-else btn-success">添加内容</button>
+    <button onclick = "removeElseFir()" type="button" class="btn-oper btn-deleteElseFir btn-success">向后删除</button>
+    <button onclick = "removeElseEnd()" type="button" class="btn-oper btn-deleteElseEnd btn-success">向前删除</button>
+
+    <!-- <img src="img/logo/logo1.png" alt="" class="backimg" style="position: absolute;opacity: 0.3"> -->
+
+
+
+
+    <div class="cnt">
+        <div id="container" class="container outer">
+
+        	<!-- 基本信息 -->
+        	<div class="row">
+        		<div class="header col-xs-6">
+        			<div class="basic_inform col-xs-12">
+        				<input type="text" id="name" name="name" class="name col-xs-12" placeholder="陈圆圆" style="">
+        			</div>
+        			<div class="basic_inform col-xs-12">
+        				<input type="text" id="phone" name="phone" class="phone basic col-xs-6" placeholder="15588886666" style="">|
+    	    			<input type="text" id="email" name="email" class="email basic col-xs-6" placeholder="Abbey@resume.com" style="">
+        			</div>
+        			<div class="basic_inform col-xs-12">
+        				<input type="text" id="curr" name="curr" class="curr basic" placeholder="本科生" style="">|
+        				<input type="text" id="sex" name="sex" class="sex basic" placeholder="女" style="">|
+        				<input type="text" id="age" name="age" class="age basic" placeholder="22岁" style="">|
+        				<input type="text" id="addre" name="addre" class="addre basic" placeholder="杭州" style="">|
+        				<input type="text" id="coll" name="coll" class="coll basic col-xs-6" placeholder="杭州师范大学" style="">
+        			</div>
+        			<div class="basic_inform col-xs-12" style="margin-left: 300px">求职意向：
+        				<input type="text" id="inten" name="inten" class="inten basic" placeholder="前端开发实习生" style="">
+        			</div>
+        		</div>
+        		<div class="img col-xs-6">
+        			<input id="img_input" type="file" style="display: none;" accept="image/*"/>
+    				<label for="img_input"></label>
+    				<div class="preview_box"></div>
+        		</div>
+        	</div>
+
+
+
+
+        	<!-- 求职总结 -->
+        	<div class="row">
+        		<div class="sum-header col-xs-12" style="">求职总结</div>
+        		<div class="line col-xs-12"></div>   		
+        		<div class="col-xs-12" style="margin-top: 15px;margin-left: 14px;">
+                    <ul id = "sum-list" class="sum-list">
+                        <li>每周可实习5天，可连续实习3个月</li>
+                        <li>大三在读学生，有过前端项目开发经验</li>
+                        <li>热爱编程，性格活泼，善于沟通协调，团队合作</li>
+                    </ul>  
+        		</div>
+        	</div>
+
+
+
+
+            <!-- 教育经历 -->
+            <div class="row">
+                <div class="edu-header col-xs-12" style="">教育经历</div>
+                <div class="line col-xs-12"></div>
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <input type="text" class="edu-name" placeholder="杭州师范大学" >
+                        </div>
+                        <div class="col-xs-6">
+                            <input type="text" class="edu-time" placeholder="2015年9月-2018年6月" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <input type="text" class="edu-major" placeholder="软件工程,杭州国际服务工程学院" >
+                        </div>
+                        <div class="col-xs-4">
+                            <input type="text" class="edu-add" placeholder="杭州" >
+                        </div>
+                    </div>
+                    <ul id = "edu-list" class="edu-list" style="margin-left: 15px;">
+                        <li>GPA: 3.65（专业前10%）</li>
+                        <li>相关课程：数据结构、数据库、软件交互设计、Android应用开发</li>
+                    </ul>  
+                </div>
+            </div>
+
+
+
+            <!-- 技能 -->
+            <div class="row">
+                <div class="tec-header col-xs-12" style="">技能</div>
+                <div class="line col-xs-12"></div>           
+                <div class="col-xs-12" style="margin-top: 15px;">
+                    <ul id = "tec-list" class="tec-list list">
+                        <li>基础：理解面向对象开发，理解函数式编程，理解并能应用常用数据结构</li>
+                        <li>数据库：应用和操作当前主流数据库，Oracle、MySQL、DB2</li>
+                        <li>服务器：操作常用应用服务器和反向代理，puma、thin、jetty</li>
+                        <li>Web前端：熟练掌握html、css、js，掌握flex、vue、sass基础</li>
+                        <li>Web开发：能实现基于nodejs的基础开发</li>
+                    </ul>  
+                </div>
+            </div>
+
+
+
+
+
+            <!-- 荣誉奖项 -->
+            <div class="row">
+                <div class="hon-header col-xs-12" style="">荣誉奖项</div>
+                <div class="line col-xs-12"></div>           
+                <div class="col-xs-12" style="margin-top: 15px;margin-left: 15px;">
+                    <ul id = "hon-list" class="hon-list">
+                        <li>优秀学生一等奖（2015-2018）</li>
+                        <li>校勤工俭学先进个人荣誉称号（2015）</li>
+                    </ul>  
+                </div>
+            </div>
+
+
+
+            <!-- 项目经历 -->
+            <div id="pro" class="row">
+                <div class="pro-header col-xs-12" style="">项目经历</div>
+                <div class="line col-xs-12"></div> 
+                <div id="pro1">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <input type="text" class="edu-name pro-name" placeholder="全国大学生“一带一路”暑期实践项目" >
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="text" class="edu-time pro-time" placeholder="2017年7月-2017年9月" >
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <input type="text" class="pro-ass" placeholder="项目负责人" >
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="text" class="pro-add" placeholder="杭州" >
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-xs-12" style="margin-top: 15px;">
+                        <ul id = "pro-list" class="pro-list list">
+                            <li>研究在“一带一路”背景下部分地区小微企业融资难问题，作为项目成员寻求到20余家小微企业进行话题专访，组织笔记并对所负责地区部分行业小微企业发展状况及前景进行分析</li>
+                            <li>所研究项目获“院级精品项目”</li>
+                        </ul>  
+                    </div>
+                </div>
+
+                <div id="pro-add1">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <input type="text" class="edu-name pro-name" placeholder="全国大学生“一带一路”暑期实践项目" >
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="text" class="edu-time pro-time" placeholder="2015年12月-2016年1月" >
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <input type="text" class="pro-ass" placeholder="项目成员" >
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="text" class="pro-add" placeholder="杭州" >
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-xs-12" style="margin-top: 15px;">
+                        <ul id = "pro-list1" class="pro-list1 list">
+                            <li>研究在“一带一路”背景下部分地区小微企业融资难问题，作为项目成员寻求到20余家小微企业进行话题专访，组织笔记并对所负责地区部分行业小微企业发展状况及前景进行分析</li>
+                            <li>所研究项目获“院级精品项目”</li>
+                        </ul>  
+                    </div>
+                </div>
+
+
+
+
+                <div id="pro-add2">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <input type="text" class="edu-name pro-name" placeholder="全国大学生“一带一路”暑期实践项目" >
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="text" class="edu-time pro-time" placeholder="2015年12月-2016年1月" >
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <input type="text" class="pro-ass" placeholder="项目成员" >
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="text" class="pro-add" placeholder="杭州" >
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-xs-12" style="margin-top: 15px;">
+                        <ul id = "pro-list2" class="pro-list2 list">
+                            <li>研究在“一带一路”背景下部分地区小微企业融资难问题，作为项目成员寻求到20余家小微企业进行话题专访，组织笔记并对所负责地区部分行业小微企业发展状况及前景进行分析</li>
+                            <li>所研究项目获“院级精品项目”</li>
+                        </ul>  
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- 社团和组织经历 -->
+            <div id="club" class="row">
+                <div class="edu-header col-xs-12" style="">社团和组织经历</div>
+                <div class="line col-xs-12"></div> 
+
+
+                <div id="club1">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <input type="text" class="edu-name club-name" placeholder="国服学院学生委员会" >
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="text" class="edu-time club-time" placeholder="2016年1月-2016年6月" >
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <input type="text" class="pro-ass club-ass" placeholder="副主席" >
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="text" class="pro-add club-add" placeholder="杭州" >
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-xs-12" style="margin-top: 15px;">
+                        <ul id = "club-list" class="club-list list">
+                            <li>一年内成功招收20+名骨干成员，主持举办了3届国服学院学生拓展训练和交流活动，累计参加人数2000+，抽的20,000元人民币资金赞助</li>
+                            <li>与长江商学院联合组织企业访谈，带领数百名学生领袖参观了联想、百度等多家知名企业</li>
+                        </ul>  
+                    </div>
+                </div>
+
+
+
+                <div id="club-add1">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <input type="text" class="edu-name club-name" placeholder="国服学院学生委员会" >
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="text" class="edu-time club-time" placeholder="2016年1月-2016年6月" >
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <input type="text" class="pro-ass club-ass" placeholder="副主席" >
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="text" class="pro-add club-add" placeholder="杭州" >
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-xs-12" style="margin-top: 15px;">
+                        <ul id = "club-list1" class="club-list1 list">
+                            <li>一年内成功招收20+名骨干成员，主持举办了3届国服学院学生拓展训练和交流活动，累计参加人数2000+，抽的20,000元人民币资金赞助</li>
+                            <li>与长江商学院联合组织企业访谈，带领数百名学生领袖参观了联想、百度等多家知名企业</li>
+                        </ul>  
+                    </div>
+                </div>
+
+
+
+                <div id="club-add2">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <input type="text" class="edu-name club-name" placeholder="国服学院学生委员会" >
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="text" class="edu-time club-time" placeholder="2016年1月-2016年6月" >
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <input type="text" class="pro-ass club-ass" placeholder="副主席" >
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="text" class="pro-add club-add" placeholder="杭州" >
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-xs-12" style="margin-top: 15px;">
+                        <ul id = "club-list2" class="club-list2 list">
+                            <li>一年内成功招收20+名骨干成员，主持举办了3届国服学院学生拓展训练和交流活动，累计参加人数2000+，抽的20,000元人民币资金赞助</li>
+                            <li>与长江商学院联合组织企业访谈，带领数百名学生领袖参观了联想、百度等多家知名企业</li>
+                        </ul>  
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- 其他 -->
+            <div class="row">
+                <div class="hon-header col-xs-12" style="">其他</div>
+                <div class="line col-xs-12"></div>           
+                <div class="col-xs-12" style="margin-top: 15px;">
+                    <ul id = "else-list" style="margin-bottom: 30px;padding-bottom: 10px;margin-left: 14px;" class="else-list">
+                        <li>语言：英语（流利，IELTS 6.5）、日语（基础）</li>
+                        <li>证书：CET6、CET4</li>
+                        <li>技能：Excel（熟练）、PPT（熟练）</li>
+                        <li>兴趣爱好：摄影、跑步</li>
+                    </ul>  
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="../js/canvg2.js"></script>
+    <script type="text/javascript" src="../js/html2canvas-0.4.1.js"></script>
+    <script type="text/javascript" src="../js/jspdf.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+    
+    <!-- <script type="text/javascript" src="js/ueditor.all.js"></script>
+    <script type="text/javascript" src="js/undo.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="../js/fireworks.js"></script>
+    <script src="../js/resume_making.js" type="text/JavaScript"></script>
+</body>
+</html>
