@@ -66,6 +66,11 @@
 * 安全保障：对用户密码进行加密处理。
 
 
+DEMO
+----
+http://47.100.166.1/resume_making/php/Index1.php
+
+
    
       
          
